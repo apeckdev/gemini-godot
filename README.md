@@ -9,6 +9,8 @@
 
 Integrates Google's Gemini AI models directly into the Godot editor interface. This plugin provides a dock panel allowing you to send prompts, attach context from your project (scripts, scene nodes, project files), and receive AI-generated responses, assisting with coding, debugging, content generation, and more.
 
+Disclaimer: Gemini 2.5 was heavily leveraged in the creation of this tool, AI generated code is present inside of the scripts.
+
 ## Features
 
 *   **Editor Dock:** Dedicated panel for interacting with the Gemini API.
