@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://7w84c3tvi82y"]
+
+[ext_resource type="Script" uid="uid://biab2f3gn2qyh" path="res://addons/gemini_godot/gemini_dock.gd" id="1_0kxol"]
+
+[sub_resource type="FontVariation" id="FontVariation_0kxol"]
+variation_transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kxol"]
+bg_color = Color(0.6, 0.6, 0.6, 0.117647)
+
+[sub_resource type="Theme" id="Theme_0kxol"]
+Label/font_sizes/font_size = 13
+Label/fonts/font = SubResource("FontVariation_0kxol")
+Label/styles/normal = SubResource("StyleBoxFlat_0kxol")
+
+[node name="gemini_dock" type="PanelContainer"]
+anchors_preset = -1
+anchor_right = 0.424
+anchor_bottom = 0.523
+offset_right = -0.448029
+offset_bottom = 0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kxol")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PromptWindowLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0kxol")
+text = "Prompt"
+horizontal_alignment = 1
+
+[node name="PromptInput" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Enter your prompt for Gemini..."
+
+[node name="ButtonBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SendButton" type="Button" parent="VBoxContainer/ButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Send Prompt"
+
+[node name="AttachSelectionButton" type="Button" parent="VBoxContainer/ButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attach Selection"
+
+[node name="AttachScriptButton" type="Button" parent="VBoxContainer/ButtonBox"]
+layout_mode = 2
+text = "Attach Script"
+
+[node name="ButtonBox2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="StatusButton" type="Button" parent="VBoxContainer/ButtonBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Copy Output"
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/ButtonBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear Output"
+
+[node name="OutputWindowLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0kxol")
+text = "Output"
+horizontal_alignment = 1
+
+[node name="ResponseOutput" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+text = "Welcome to the Gemini Assistant!"
+scroll_following = true
+selection_enabled = true
+
+[node name="AttachmentWindowLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0kxol")
+text = "Attachments"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AttachmentContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatusBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsStatusLabel" type="Label" parent="VBoxContainer/StatusBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Connection to main plugin failed during initialization."
+text = "Error: Plugin link failed."
+
+[node name="OpenSettingsButton" type="Button" parent="VBoxContainer/StatusBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "⚙️"
