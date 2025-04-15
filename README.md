@@ -1,15 +1,13 @@
 # Gemini Assistant - Godot Editor Plugin
 
-**Version:** 0.1 (Match your plugin.cfg)
-**Author:** Austin Peck & <Your Name/Handle>
-**Godot Version:** 4.2+ (Specify tested versions)
-**License:** MIT (Or your chosen license)
+**Version:** 0.1 
+**Author:** Austin Peck
+**Godot Version:** 4.2+
+**License:** MIT
 
 ## Description
 
 Integrates Google's Gemini AI models directly into the Godot editor interface. This plugin provides a dock panel allowing you to send prompts, attach context from your project (scripts, scene nodes, project files), and receive AI-generated responses, assisting with coding, debugging, content generation, and more.
-
-This plugin was created in collaboration with Austin Peck.
 
 ## Features
 
